@@ -1,31 +1,20 @@
 <template>
   <div class="app">
-    <ul class="nav">
-      <li
-        v-for="(route, i) in routes"
-        :key="i"
-      >
-        <router-link :to="route.path">
-          {{ route.name }}
-        </router-link>
-      </li>
-    </ul>
+    <MainMenuComponent />
+    <SearchComponent />
     <router-view />
   </div>
 </template>
 
 <script>
-import router from '@/router';
+import MainMenuComponent from '@/components/MainMenuComponent.vue';
+import SearchComponent from '@/components/SearchComponent';
 
 export default {
   name: 'App',
-
-  setup () {
-    const routes = router.options.routes;
-
-    return {
-      routes
-    };
+  components: {
+    MainMenuComponent,
+    SearchComponent
   }
 };
 </script>

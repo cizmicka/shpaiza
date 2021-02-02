@@ -9,8 +9,15 @@ import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
-createApp(App)
-  .use(PrimeVue, {ripple: true})
-  .use(store)
-  .use(router)
-  .mount('#app');
+import InputText from 'primevue/inputtext';
+
+const app = createApp(App);
+
+app.use(PrimeVue);
+app.use(InputText);
+app.use(store);
+app.use(router);
+
+app.component('InputText', InputText);
+
+app.mount('#app');
